@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe Gamr By Abhay</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <main>
+        <div class="gameHeader">
+            <h1>Tic Tac Toe Game By Abhay</h1>
+        </div>
+    </main>
+    <div class="container">
+        <div class="game">
+            <button class="box"></button>
+            <button class="box"></button>
+            <button class="box"></button>
+            <button class="box"></button>
+            <button class="box"></button>
+            <button class="box"></button>
+            <button class="box"></button>
+            <button class="box"></button>
+            <button class="box"></button>
+        </div>
+    </div>
+    <div class="msgContainer">
+        <div class="msg hide" id="msgBox">winner</div>
+        <div class="gameTurn">
+            <div class="turnO">Tern of O</div>
+            <div class="turnX">Tern of X</div>
+        </div>
+        <div class="countContainer">
+            <div class="countO">
+                <p>Count O</p>
+                <p id="scoreO">0</p>
+            </div>
+            <div class="countX">
+                <p>Count X</p>
+                <p id="scoreX">0</p>
+            </div>
+        </div>
+        <div class="start hide">
+            <button id="restart">New Game</button>
+            <button id="reset">Reset Game</button>
+        </div>
+        <button id="reSet" class = "hide">Reset Game</button>
+    </div>
+
+    <script src="java.js"></script>
+</body>
+</html>
