@@ -11,14 +11,14 @@ body{
     font-size: x-large;
 }
 .container{
-    height: 70vh;
+    height: 65vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .game{
-    height: 60vmin;
-    width: 60vmin;
+    height: 58vmin;
+    width: 58vmin;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -26,8 +26,8 @@ body{
     gap: 10px;
 }
 .box{
-    height: 18vmin;
-    width: 18vmin;
+    height: 17vmin;
+    width: 17vmin;
     background-color: #ffff;
     border-radius: 1rem;
     font-size: 18vmin;
@@ -39,7 +39,7 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
 }
 .gameTurn{
     height: 5vmin;

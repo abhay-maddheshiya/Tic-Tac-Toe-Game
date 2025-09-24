@@ -29,6 +29,7 @@ reSet.classList.remove("hide");
 
 const resetGame = () => {
     turnO = true;
+    gameOver = false;
     enableBoxes();
     start.classList.add("hide");
     Xturn.classList.add("turnX");
@@ -39,7 +40,9 @@ const resetGame = () => {
 }
 const newGame = () => {
     turnO = true;
+    gameOver = false;
     enableBoxes();
+    msg.classList.add("hide");
     start.classList.add("hide");
     reSet.classList.remove("hide")
     Oturn.classList.remove("turnO");
@@ -112,11 +115,21 @@ const checkWinner = () => {
             }
         }
     }
-    if (Array.from(boxes).every(box => box.innerText !== "") && !gameOver) {
+    if (!gameOver && Array.from(boxes).every(box => box.innerText !== "")) {
         msg.innerText = "It's a Draw!";
-        reSet.remove("reSet");
+        msg.classList.remove("hide");   // 👈 show message
         gameOver = true;
         disableBoxes();
+
+        setTimeout(() => {
+            enableBoxes();            // clear board
+            msg.classList.add("hide"); 
+            gameOver = false;         // allow next round
+            turnO = true;             // reset starting player
+            Xturn.classList.add("turnX");
+            Oturn.classList.remove("turnO");
+            reSet.classList.remove("hide");
+        }, 3000); // 2 seconds
     }
 };
 newGameBt.addEventListener("click", newGame);
