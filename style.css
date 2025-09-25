@@ -1,4 +1,4 @@
-*{
+/* *{
     margin: 0px;
     padding: 0px;
 }
@@ -92,4 +92,266 @@ body{
 }
 .hide{
     display: none;
-}
+} */
+* {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #548687;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        .gameHeader {
+            margin-top: 10px;
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
+            color: #ffffc7;
+            height: 10vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .container {
+            height: 50vmin;
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 5px 0;
+        }
+
+        .game {
+            height: 50vmin;
+            width: 50vmin;
+            max-width: 350px;
+            max-height: 350px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .box {
+            height: 15vmin;
+            width: 15vmin;
+            max-height: 100px;
+            max-width: 100px;
+            background-color: #ffff;
+            border-radius: 1rem;
+            font-size: 8vmin;
+            font-weight: bold;
+            border: rgb(41, 44, 36) solid 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.1s;
+        }
+
+        .box:active {
+            transform: scale(0.95);
+        }
+
+        .box.X {
+            color: #2196F3;
+        }
+
+        .box.O {
+            color: #FF5722;
+        }
+
+        .player-info {
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+            max-width: 350px;
+            margin: 10px auto;
+            background-color: rgba(0, 0, 0, 0.15);
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .player {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+        }
+
+        .player-label {
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+            color: #ffffc7;
+            margin-bottom: 5px;
+        }
+
+        .player-score {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .turn-indicator {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+        }
+
+        .turn-label {
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+            color: #ffffc7;
+            margin-bottom: 5px;
+        }
+
+        .turn-symbol {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .turn-O .turn-symbol {
+            background-color: #FF5722;
+        }
+
+        .turn-X .turn-symbol {
+            background-color: #2196F3;
+        }
+
+        .msgContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 10px;
+            height: 25vh;
+        }
+
+        #msgBox {
+            color: #ffffc7;
+            font-size: clamp(1.2rem, 4vw, 1.6rem);
+            font-weight: bold;
+            padding: 10px 15px;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 90%;
+            max-width: 350px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .button-container {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 90%;
+            max-width: 350px;
+        }
+
+        #reSet, #reset, #restart {
+            background-color: #191913;
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+            color: aliceblue;
+            padding: 10px 15px;
+            border-radius: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            min-width: 120px;
+        }
+
+        #reSet:hover, #reset:hover, #restart:hover {
+            background-color: #2a2a22;
+            transform: translateY(-2px);
+        }
+
+        .hide {
+            display: none;
+        }
+
+        /* Responsive adjustments for very small screens */
+        @media (max-width: 480px) {
+            .game {
+                height: 45vmin;
+                width: 45vmin;
+                gap: 5px;
+            }
+            
+            .box {
+                height: 13vmin;
+                width: 13vmin;
+                font-size: 7vmin;
+            }
+            
+            .player-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .button-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            #reSet, #reset, #restart {
+                width: 100%;
+                max-width: 200px;
+            }
+        }
+
+        @media (max-height: 700px) {
+            .gameHeader {
+                height: 8vh;
+            }
+            
+            .container {
+                height: 45vmin;
+            }
+            
+            .msgContainer {
+                height: 22vh;
+                gap: 10px;
+            }
+        }
+
+        @media (max-height: 600px) {
+            .gameHeader {
+                height: 7vh;
+                font-size: 1.2rem;
+            }
+            
+            .container {
+                height: 40vmin;
+            }
+            
+            .game {
+                height: 40vmin;
+                width: 40vmin;
+            }
+            
+            .msgContainer {
+                height: 20vh;
+                gap: 8px;
+            }
+        }
